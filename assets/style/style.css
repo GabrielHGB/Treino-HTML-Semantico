@@ -1,0 +1,526 @@
+/* ---------- CONFIGURAÇÕES GERAIS ---------- */
+
+:root {
+    --verde-escuro: #173b2c;
+    --verde: #2f684c;
+    --verde-claro: #dce9df;
+    --creme: #f7f1e5;
+    --creme-claro: #fffdf8;
+    --marrom: #70452f;
+    --dourado: #c69345;
+    --texto: #29251f;
+    --texto-claro: #ffffff;
+    --borda: #ded3c3;
+    --sombra: 0 8px 24px rgba(38, 30, 20, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--creme);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+}
+
+/* ---------- CABEÇALHO E NAVEGAÇÃO ---------- */
+
+header {
+    padding: 52px 6% 0;
+    background-color: var(--verde-escuro);
+    color: var(--texto-claro);
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #f4d6a0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+
+header > p {
+    margin: 14px 0 36px;
+    color: #e8eee9;
+    font-size: 1.05rem;
+}
+
+nav {
+    margin: 0 -6%;
+    padding: 0 6%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 18px 0;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    padding: 4px 0;
+    color: var(--texto-claro);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: #f4d6a0;
+    border-color: #f4d6a0;
+}
+
+/* ---------- CONTEÚDO PRINCIPAL ---------- */
+
+main {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+section {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+section > h2,
+footer h2 {
+    margin: 0 0 12px;
+    color: var(--verde-escuro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    line-height: 1.2;
+}
+
+section > h2::after {
+    display: block;
+    width: 70px;
+    height: 4px;
+    margin-top: 14px;
+    background-color: var(--dourado);
+    border-radius: 4px;
+    content: "";
+}
+
+/* ---------- APRESENTAÇÃO ---------- */
+
+#sobre {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+    gap: 12px 48px;
+    align-items: center;
+}
+
+#sobre h2 {
+    grid-column: 1 / -1;
+}
+
+#sobre figure {
+    grid-row: 2 / 5;
+    margin: 18px 0 0;
+}
+
+#sobre figure img {
+    width: 100%;
+    min-height: 380px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+#sobre figcaption {
+    margin-top: 10px;
+    color: #645a4e;
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+}
+
+#sobre > p {
+    margin: 8px 0;
+    font-size: 1.05rem;
+}
+
+/* ---------- CARDÁPIO E BARRA LATERAL ---------- */
+
+#cardapio {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) 280px;
+    gap: 22px;
+}
+
+#cardapio > h2,
+#cardapio > h2 + p {
+    grid-column: 1 / -1;
+}
+
+#cardapio > h2 + p {
+    margin: -2px 0 16px;
+}
+
+#cardapio article {
+    padding: 26px;
+    background-color: var(--creme-claro);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(38, 30, 20, 0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#cardapio article:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+#cardapio article h3,
+#cardapio aside h3 {
+    margin: 0 0 10px;
+    color: var(--marrom);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+}
+
+#cardapio article p {
+    margin: 8px 0;
+}
+
+#cardapio article strong {
+    color: var(--verde-escuro);
+    font-size: 1.12rem;
+}
+
+mark {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 3px 9px;
+    background-color: #f1dda9;
+    color: #54391d;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: 999px;
+}
+
+#cardapio aside {
+    grid-column: 3;
+    grid-row: 3 / 5;
+    padding: 28px;
+    background-color: var(--verde-escuro);
+    color: var(--texto-claro);
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+}
+
+#cardapio aside h3 {
+    color: #f4d6a0;
+}
+
+#cardapio aside p {
+    margin: 18px 0 7px;
+}
+
+#cardapio aside ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+#cardapio aside li {
+    margin: 4px 0;
+}
+
+abbr {
+    text-decoration-color: #f4d6a0;
+    cursor: help;
+}
+
+/* ---------- TABELA DE HORÁRIOS ---------- */
+
+table {
+    width: 100%;
+    margin-top: 32px;
+    background-color: var(--creme-claro);
+    border-collapse: collapse;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+}
+
+caption {
+    padding: 14px;
+    background-color: var(--marrom);
+    color: var(--texto-claro);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+th,
+td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--borda);
+    text-align: left;
+}
+
+thead {
+    background-color: var(--verde);
+    color: var(--texto-claro);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1eadc;
+}
+
+tbody tr:hover {
+    background-color: var(--verde-claro);
+}
+
+tfoot td {
+    background-color: #eadfcf;
+    color: #594f43;
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+}
+
+#horarios > p:last-child {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background-color: var(--verde-claro);
+    border-left: 5px solid var(--verde);
+    border-radius: 6px;
+}
+
+/* ---------- PERGUNTAS FREQUENTES ---------- */
+
+details {
+    margin-top: 14px;
+    background-color: var(--creme-claro);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+summary {
+    padding: 18px 22px;
+    color: var(--verde-escuro);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+details[open] summary {
+    border-bottom: 1px solid var(--borda);
+}
+
+details p {
+    margin: 0;
+    padding: 16px 22px 20px;
+}
+
+/* ---------- FORMULÁRIO ---------- */
+
+#reserva {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+form {
+    margin-top: 28px;
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px 22px;
+    padding: 30px;
+    background-color: var(--creme-claro);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+}
+
+legend {
+    padding: 0 10px;
+    color: var(--marrom);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+label {
+    margin-top: 10px;
+    color: #423a31;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: #ffffff;
+    border: 1px solid #bfb3a3;
+    border-radius: 7px;
+    color: var(--texto);
+    font: inherit;
+}
+
+input:focus {
+    border-color: var(--verde);
+    outline: 3px solid rgba(47, 104, 76, 0.2);
+}
+
+button {
+    margin-top: 18px;
+    padding: 14px 22px;
+    background-color: var(--verde-escuro);
+    color: var(--texto-claro);
+    font: inherit;
+    font-weight: 700;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover,
+button:focus-visible {
+    background-color: var(--marrom);
+    transform: translateY(-2px);
+}
+
+/* ---------- DIALOG DEMONSTRATIVO ---------- */
+
+dialog[open] {
+    position: static;
+    display: block;
+    width: min(680px, 90%);
+    margin: 34px auto 72px;
+    padding: 24px 28px;
+    background-color: #fff7df;
+    color: var(--texto);
+    border: 1px solid var(--dourado);
+    border-left: 6px solid var(--dourado);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+dialog h2 {
+    margin: 0 0 6px;
+    color: var(--marrom);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+}
+
+dialog p {
+    margin: 0;
+}
+
+/* ---------- RODAPÉ ---------- */
+
+footer {
+    padding: 52px 6%;
+    background-color: #10291f;
+    color: #e9eee9;
+    text-align: center;
+}
+
+footer h2 {
+    color: #f4d6a0;
+}
+
+address {
+    font-style: normal;
+}
+
+address a {
+    color: #f4d6a0;
+}
+
+footer small {
+    color: #b9c5bd;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+@media (max-width: 900px) {
+    #sobre {
+        grid-template-columns: 1fr;
+    }
+
+    #sobre figure {
+        grid-row: auto;
+    }
+
+    #cardapio {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #cardapio aside {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 620px) {
+    header {
+        padding-top: 38px;
+    }
+
+    nav ul {
+        gap: 6px 18px;
+    }
+
+    main {
+        width: min(92%, 1180px);
+    }
+
+    section {
+        padding: 52px 0;
+    }
+
+    #sobre figure img {
+        min-height: 260px;
+    }
+
+    #cardapio {
+        grid-template-columns: 1fr;
+    }
+
+    #cardapio > h2,
+    #cardapio > h2 + p,
+    #cardapio aside {
+        grid-column: 1;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    fieldset {
+        padding: 22px 18px;
+    }
+}

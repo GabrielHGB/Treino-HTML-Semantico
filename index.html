@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabor da Casa | Cozinha artesanal</title>
+    <link rel="stylesheet" href="assets/style/style.css" />
+  </head>
+  <body>
+    <!--
+      O header aqui foi utilizado como cabeça do nosso site, ele vai ajudar em coisas como identidade e navegação.
+      Aqui ele apresenta o restaurante. -->
+    <header id="inicio">
+      <!--
+          O h1 é o Titulo da nossa página, nesse caso o nome do restaurante ele identifica o assunto principal da página. 
+          Há somente um h1 porque é o título de toda a página, ajudando leitores de tela e mecanismos de busca.
+        -->
+      <h1>Sabor da Casa</h1>
+      <!--
+          O p aqui é para colocar um texto que não tem uma importancia semantica de titulo para alguma parte do site, é apenas um texto
+          que complementa meu h1
+        -->
+      <p>Cozinha artesanal, ingredientes frescos e receitas com afeto.</p>
+      <!--
+          O nav identifica onde possuimos uma navegação de links. 
+          Aqui utilizamos a lista porque a lista organiza links relacionados
+          e o aria-label diferencia essa navegacao de outras que poderiam existir na página.
+        -->
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#horarios">Horários</a></li>
+          <li><a href="#reserva">Reservas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--
+      O main mostra onde temoss o conteudo principal da nossa pagina, só deve existir um desse em cada pagina. 
+    -->
+    <main id="conteudo-principal">
+      <!--
+          A section agrupa um tema específico da página. Nesse caso seria um sobre o restaurante
+        -->
+      <section id="sobre" aria-labelledby="titulo-sobre">
+        <!--
+              O h2 nomeia um outro grupo que está presente dentro da página, perceba que não é 
+              sobre tudo na pagina, apenas essa seção, por isso um h2
+            -->
+        <h2 id="titulo-sobre">Uma experiência feita para você</h2>
+        <!--
+              O figure mostra uma mída (Imagems, vídeo, audio) que mesmo de forma independente tem um sentido, mas que faz parte dessa seção e esse h2. 
+            -->
+        <figure>
+          <!--
+                  O img insere uma imagem; o alt descreve seu conteúdo e sua função.
+                  Assim, quem não enxerga ou não carrega a imagem ainda recebe a informação essencial.
+                -->
+          <img
+            src="assets/prato-da-casa.jpg"
+            alt="Risoto cremoso com cogumelos, ervas frescas e queijo ralado servido em prato claro"
+          />
+          <!--
+                  O figcaption fornece a legenda da figure, podendo ser (Audio, imagem, video). Muito parecido com o alt da imagem, porém o alt ele descreve a imagem para aqueles que não conseguem enxerga-lá, e o figcaption ele da mais uma informação para entendimento da imagem, em conjunto.
+                -->
+          <figcaption>
+            Risoto da Casa, preparado com cogumelos frescos e ervas.
+          </figcaption>
+        </figure>
+        <p>
+          No Sabor da Casa, cada receita combina ingredientes locais e preparo
+          artesanal. Nosso compromisso é servir comida
+          <strong>fresca e acolhedora</strong>, respeitando o tempo de cada
+          ingrediente.
+        </p>
+
+        <p>
+          O menu foi criado pela chef Marina Lopes e muda conforme a estação.
+          <em>Da nossa cozinha para a sua mesa.</em>
+        </p>
+      </section>
+
+      <section id="cardapio" aria-labelledby="titulo-cardapio">
+        <h2 id="titulo-cardapio">Nosso cardápio</h2>
+        <p>Conheça alguns dos sabores mais pedidos da casa.</p>
+        <!--
+              O article representa um conteúdo completo que poderia existir de modo independente.
+              Cada prato possui nome, descrição e preço próprios, podendo ser reutilizado em outro catálogo.
+            -->
+        <article aria-labelledby="titulo-risoto">
+          <!--
+                  O h3 identifica um titulo de uma subseção dentro da section. Sua posição abaixo do h2
+                  preserva a hierarquia e aqui permite localizar o prato pela navegação por títulos.
+                -->
+          <h3 id="titulo-risoto">Risoto da Casa</h3>
+          <p>Arroz arbóreo, cogumelos frescos, parmesão e ervas aromáticas.</p>
+          <!--
+                  strong aqui é utilizado para mostrar onde esta a parte mais importante
+                  do nosso paragráfo, que é o preço. E o mark é uma informação relevante para esse contexto, nesse caso esse prato é o mais pedido.
+                -->
+          <p><strong>R$ 48,00</strong> <mark>Mais pedido</mark></p>
+          <button type="button" data-prato="Risoto da Casa">
+            Ver detalhes
+          </button>
+        </article>
+
+        <article aria-labelledby="titulo-massa">
+          <h3 id="titulo-massa">Massa do Jardim</h3>
+          <p>
+            Fettuccine artesanal com tomate-cereja, abobrinha, manjericão e
+            molho da casa.
+          </p>
+          <p><strong>R$ 39,00</strong> <mark>Vegetariano</mark></p>
+          <button type="button" data-prato="Massa do Jardim">
+            Ver detalhes
+          </button>
+        </article>
+
+        <article aria-labelledby="titulo-frango">
+          <h3 id="titulo-frango">Frango da Fazenda</h3>
+          <p>
+            Filé de frango grelhado, purê de batata, legumes e molho de
+            mostarda.
+          </p>
+          <p><strong>R$ 42,00</strong></p>
+          <button type="button" data-prato="Frango da Fazenda">
+            Ver detalhes
+          </button>
+        </article>
+
+        <article aria-labelledby="titulo-sobremesa">
+          <h3 id="titulo-sobremesa">Doce de Minas</h3>
+          <p>Queijo artesanal, doce de leite e crocante de castanhas.</p>
+          <p><strong>R$ 22,00</strong> <mark>Prato do dia</mark></p>
+          <button type="button" data-prato="Doce de Minas">Ver detalhes</button>
+        </article>
+
+        <!--
+              O aside contém informações relacionadas ao cardápio, mas complementares aos pratos.
+              Separar preços e etiquetas ajuda a entender que esse bloco apoia o conteúdo principal.
+        -->
+        <!--
+              O aside é usado aqui porque esse guia tem informações extras
+              que ajudam a entender o cardápio, mas não fazem parte dos pratos.
+        -->
+        <aside aria-labelledby="titulo-guia-cardapio">
+          <h3 id="titulo-guia-cardapio">Guia do cardápio</h3>
+
+          <p><strong>Faixas de preço</strong></p>
+
+          <!--
+      O ul é usado para criar uma lista onde a ordem dos itens
+      não importa, já que são apenas as diferentes faixas de preço.
+    -->
+          <ul>
+            <li>$ — até R$ 30</li>
+            <li>$$ — de R$ 31 a R$ 50</li>
+            <li>$$$ — acima de R$ 50</li>
+          </ul>
+
+          <p><strong>Etiquetas</strong></p>
+
+          <!--
+      Aqui usamos outra ul porque a ordem das etiquetas também
+      não importa, queremos apenas listar as opções.
+    -->
+          <ul>
+            <li>Vegetariano</li>
+            <li>Sem lactose</li>
+            <li>Picante</li>
+            <li>Mais pedido</li>
+          </ul>
+
+          <!--
+      O abbr é usado para mostrar que "kg" é uma abreviação,
+      e no title colocamos o significado completo dela.
+    -->
+          <p>
+            Porções individuais pesam aproximadamente 0,4
+            <abbr title="quilograma">kg</abbr>.
+          </p>
+        </aside>
+      </section>
+
+      <!--
+          Esta section reúne os horários de funcionamento, um assunto independente dentro do main.
+          Sua identificação por título facilita encontrar rapidamente quando o restaurante abre.
+        -->
+      <section id="horarios" aria-labelledby="titulo-horarios">
+        <h2 id="titulo-horarios">Horários de funcionamento</h2>
+
+        <!--
+              A table apresenta dados que dependem da relação entre linhas e colunas.
+              Usá-la para dias e turnos permite que leitores de tela anunciem os cabeçalhos associados.
+            -->
+        <table>
+          <!--
+                  O caption fornece o título acessível da tabela. Ele explica seu conteúdo antes
+                  da leitura das células e ajuda o usuário a decidir se deseja explorá-la.
+                -->
+          <caption>
+            Atendimento semanal do restaurante
+          </caption>
+
+          <!--
+                  O thead agrupa os cabeçalhos das colunas. Isso diferencia os rótulos dos dados
+                  e melhora a interpretação da tabela por navegadores e leitores de tela.
+                -->
+          <thead>
+            <tr>
+              <th scope="col">Dia</th>
+              <th scope="col">Almoço</th>
+              <th scope="col">Jantar</th>
+            </tr>
+          </thead>
+
+          <!--
+                  O tbody agrupa as linhas principais de dados. Essa separação deixa a estrutura
+                  da tabela mais clara e facilita aplicar estilos ou fazer manutenção.
+                -->
+          <tbody>
+            <tr>
+              <th scope="row">Segunda a quinta</th>
+              <td>
+                <time datetime="11:00">11h</time> às
+                <time datetime="15:00">15h</time>
+              </td>
+              <td>
+                <time datetime="18:00">18h</time> às
+                <time datetime="22:00">22h</time>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Sexta-feira</th>
+              <td>
+                <time datetime="11:00">11h</time> às
+                <time datetime="15:00">15h</time>
+              </td>
+              <td>
+                <time datetime="18:00">18h</time> às
+                <time datetime="23:00">23h</time>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Sábado</th>
+              <td>
+                <time datetime="11:00">11h</time> às
+                <time datetime="16:00">16h</time>
+              </td>
+              <td>
+                <time datetime="18:00">18h</time> às
+                <time datetime="23:00">23h</time>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Domingo</th>
+              <td>
+                <time datetime="11:00">11h</time> às
+                <time datetime="16:00">16h</time>
+              </td>
+              <td>Fechado</td>
+            </tr>
+          </tbody>
+
+          <!--
+                  O tfoot agrupa a informação final ou o resumo da tabela. Aqui ele destaca uma
+                  observação válida para todos os horários, separando-a dos registros do corpo.
+                -->
+          <tfoot>
+            <tr>
+              <td colspan="3">
+                A cozinha encerra os pedidos 30 minutos antes do fechamento.
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <!--
+              O time representa horário ou data em formato interpretável por máquinas.
+              O datetime permite que sistemas reconheçam a data do próximo evento mesmo com texto amigável.
+            -->
+        <p>
+          Próximo jantar especial:
+          <time datetime="2026-09-19T19:30"
+            >19 de setembro de 2026, às 19h30</time
+          >.
+        </p>
+      </section>
+
+      <!--
+          Esta section reúne dúvidas frequentes relacionadas à visita ao restaurante.
+          Separá-las melhora a organização e torna o conteúdo mais fácil de localizar.
+        -->
+      <section id="perguntas" aria-labelledby="titulo-perguntas">
+        <h2 id="titulo-perguntas">Perguntas frequentes</h2>
+
+        <!--
+              O details cria um bloco que pode ser expandido ou recolhido pelo usuário.
+              Isso reduz o excesso visual sem esconder a informação de tecnologias assistivas.
+            -->
+        <details>
+          <!--
+                  O summary fornece o rótulo clicável e sempre visível do details.
+                  Uma pergunta objetiva informa claramente qual resposta será revelada.
+                -->
+          <summary>O restaurante possui opções vegetarianas?</summary>
+          <p>
+            Sim. Os pratos vegetarianos são identificados no cardápio com uma
+            etiqueta própria.
+          </p>
+        </details>
+
+        <details>
+          <summary>É necessário fazer reserva?</summary>
+          <p>
+            Não é obrigatório, mas recomendamos reservar às sextas-feiras e aos
+            sábados.
+          </p>
+        </details>
+
+        <details>
+          <summary>O restaurante possui acessibilidade?</summary>
+          <p>
+            Sim. A entrada, o salão e o banheiro possuem estrutura acessível.
+          </p>
+        </details>
+      </section>
+
+      <!--
+          Esta section agrupa o formulário de reserva, uma tarefa específica da página.
+          O título associado ajuda leitores de tela a identificar o propósito da região.
+        -->
+      <section id="reserva" aria-labelledby="titulo-reserva">
+        <h2 id="titulo-reserva">Reserve sua mesa</h2>
+        <p id="orientacao-reserva">
+          Preencha os campos abaixo. Os campos com * são obrigatórios.
+        </p>
+
+        <!--
+              O form reúne controles usados para enviar dados. O aria-describedby relaciona
+              o formulário às instruções, garantindo que a orientação possa ser anunciada.
+            -->
+        <form
+          id="form-reserva"
+          action="#"
+          method="post"
+          aria-describedby="orientacao-reserva"
+        >
+          <!--
+                  O fieldset agrupa campos que pertencem ao mesmo assunto. Essa relação semântica
+                  ajuda usuários de leitores de tela a compreenderem o contexto de cada controle.
+                -->
+          <fieldset>
+            <!--
+                      O legend nomeia o grupo criado pelo fieldset. Ele é anunciado antes dos campos,
+                      fornecendo contexto acessível para o conjunto de dados da reserva.
+                    -->
+            <legend>Dados da reserva</legend>
+
+            <label for="nome">Nome completo *</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              autocomplete="name"
+              required
+            />
+
+            <label for="email">E-mail *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+
+            <label for="data">Data *</label>
+            <input type="date" id="data" name="data" required />
+
+            <label for="horario">Horário *</label>
+            <input
+              type="time"
+              id="horario"
+              name="horario"
+              min="11:00"
+              max="22:30"
+              required
+            />
+
+            <label for="pessoas">Número de pessoas *</label>
+            <input
+              type="number"
+              id="pessoas"
+              name="pessoas"
+              min="1"
+              max="12"
+              required
+            />
+
+            <button type="submit">Solicitar reserva</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <!--
+          O dialog representa uma janela que exige atenção temporária. Ele confirma a reserva
+          sem levar o usuário a outra página e possui um título associado por aria-labelledby.
+        -->
+      <dialog id="confirmacao-reserva" aria-labelledby="titulo-dialogo">
+        <h2 id="titulo-dialogo">Solicitação recebida!</h2>
+        <p>
+          Entraremos em contato para confirmar a disponibilidade da sua mesa.
+        </p>
+        <button
+          type="button"
+          id="fechar-dialogo"
+          aria-label="Fechar mensagem de confirmação"
+        >
+          Fechar
+        </button>
+      </dialog>
+    </main>
+
+    <!--
+      O footer contém informações finais e institucionais da página.
+      Essa identificação ajuda usuários e mecanismos de busca a reconhecerem contato e autoria.
+    -->
+    <footer id="contato">
+      <h2>Contato</h2>
+
+      <!--
+          O address identifica informações de contato do responsável pelo site ou estabelecimento.
+          Isso oferece significado semântico ao endereço, telefone e e-mail do restaurante.
+        -->
+      <address>
+        Rua das Acácias, 120 — Centro, Contagem — MG<br />
+        Telefone: <a href="tel:+553133334444">(31) 3333-4444</a><br />
+        E-mail:
+        <a href="mailto:contato@sabordacasa.com.br"
+          >contato@sabordacasa.com.br</a
+        >
+      </address>
+
+      <p>
+        <small>&copy; 2026 Sabor da Casa. Todos os direitos reservados.</small>
+      </p>
+    </footer>
+  </body>
+</html>
