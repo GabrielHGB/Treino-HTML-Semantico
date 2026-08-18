@@ -1,31 +1,7 @@
-/* ---------- CONFIGURAÇÕES GERAIS ---------- */
-
-:root {
-    --verde-escuro: #173b2c;
-    --verde: #2f684c;
-    --verde-claro: #dce9df;
-    --creme: #f7f1e5;
-    --creme-claro: #fffdf8;
-    --marrom: #70452f;
-    --dourado: #c69345;
-    --texto: #29251f;
-    --texto-claro: #ffffff;
-    --borda: #ded3c3;
-    --sombra: 0 8px 24px rgba(38, 30, 20, 0.12);
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
-    background-color: var(--creme);
-    color: var(--texto);
+    background-color: #f7f1e5;
+    color: #29251f;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
@@ -36,16 +12,10 @@ img {
     height: auto;
 }
 
-a {
-    color: inherit;
-}
-
-/* ---------- CABEÇALHO E NAVEGAÇÃO ---------- */
-
 header {
-    padding: 52px 6% 0;
-    background-color: var(--verde-escuro);
-    color: var(--texto-claro);
+    padding-top: 52px;
+    background-color: #173b2c;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -53,20 +23,18 @@ header h1 {
     margin: 0;
     color: #f4d6a0;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    font-size: 4rem;
     line-height: 1.1;
     letter-spacing: 2px;
 }
 
-header > p {
-    margin: 14px 0 36px;
+header p {
+    margin: 15px;
     color: #e8eee9;
     font-size: 1.05rem;
 }
 
 nav {
-    margin: 0 -6%;
-    padding: 0 6%;
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -74,7 +42,7 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px 32px;
+    gap: 32px;
     max-width: 1180px;
     margin: 0 auto;
     padding: 18px 0;
@@ -84,37 +52,37 @@ nav ul {
 nav a {
     display: inline-block;
     padding: 4px 0;
-    color: var(--texto-claro);
+    color: #ffffff;
     font-weight: 700;
     text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
 }
 
-nav a:hover,
-nav a:focus-visible {
+nav a:hover {
     color: #f4d6a0;
     border-color: #f4d6a0;
 }
 
-/* ---------- CONTEÚDO PRINCIPAL ---------- */
+/* MAIN */
 
 main {
-    width: min(1180px, 90%);
+    width: 90%;
+    max-width: 1180px;
     margin: 0 auto;
 }
 
 section {
     padding: 72px 0;
-    border-bottom: 1px solid var(--borda);
+    border-bottom: 1px solid #ded3c3;
 }
 
 section > h2,
 footer h2 {
-    margin: 0 0 12px;
-    color: var(--verde-escuro);
+    margin: 12px;
+    color: #173b2c;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    font-size: 2.5rem;
     line-height: 1.2;
 }
 
@@ -122,56 +90,81 @@ section > h2::after {
     display: block;
     width: 70px;
     height: 4px;
-    margin-top: 14px;
-    background-color: var(--dourado);
+    margin-top: 10px;
+    background-color: #c69345;
     border-radius: 4px;
     content: "";
 }
 
-/* ---------- APRESENTAÇÃO ---------- */
+/* Sobre - Prato */
 
 #sobre {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-    gap: 12px 48px;
-    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 #sobre h2 {
-    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
+#sobre h2::after{
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 10px;
+    background-color: #c69345;
+    border-radius: 4px;
+    content: "";
+} 
+
 #sobre figure {
-    grid-row: 2 / 5;
-    margin: 18px 0 0;
+    float: left;
+    width: 400px;
+    height: 400px;
+    margin: 0 40px 40px 0;
+    shape-outside: circle(45%);
+    shape-margin: 25px;
+}
+
+#sobre figcaption {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 #sobre figure img {
     width: 100%;
-    min-height: 380px;
-    object-fit: cover;
-    border-radius: 18px;
-    box-shadow: var(--sombra);
+    height: 100%;
+    object-fit: contain;
 }
 
 #sobre figcaption {
-    margin-top: 10px;
-    color: #645a4e;
-    font-size: 0.9rem;
-    font-style: italic;
     text-align: center;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 8px;
 }
 
-#sobre > p {
-    margin: 8px 0;
+#sobre p {
     font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
 }
 
-/* ---------- CARDÁPIO E BARRA LATERAL ---------- */
+#sobre::after {
+    content: "";
+    display: block;
+    clear: left;
+}
+
+/* Cardapio */
 
 #cardapio {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) 280px;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 22px;
 }
 
@@ -180,28 +173,24 @@ section > h2::after {
     grid-column: 1 / -1;
 }
 
-#cardapio > h2 + p {
-    margin: -2px 0 16px;
-}
-
 #cardapio article {
     padding: 26px;
-    background-color: var(--creme-claro);
-    border: 1px solid var(--borda);
+    background-color: #fffdf8;
+    border: 1px solid #ded3c3;
     border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(38, 30, 20, 0.07);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: rgba(38, 30, 20, 0.8);
+    transition: 0.2s;
 }
 
 #cardapio article:hover {
     transform: translateY(-4px);
-    box-shadow: var(--sombra);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 #cardapio article h3,
 #cardapio aside h3 {
     margin: 0 0 10px;
-    color: var(--marrom);
+    color: #70452f;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.45rem;
 }
@@ -211,7 +200,7 @@ section > h2::after {
 }
 
 #cardapio article strong {
-    color: var(--verde-escuro);
+    color: #173b2c;
     font-size: 1.12rem;
 }
 
@@ -230,10 +219,10 @@ mark {
     grid-column: 3;
     grid-row: 3 / 5;
     padding: 28px;
-    background-color: var(--verde-escuro);
-    color: var(--texto-claro);
+    background-color: #173b2c;
+    color: #ffffff;
     border-radius: 14px;
-    box-shadow: var(--sombra);
+    box-shadow: 0 8px 24px rgba(38, 30, 20, 0.12);
 }
 
 #cardapio aside h3 {
@@ -254,48 +243,43 @@ mark {
 }
 
 abbr {
-    text-decoration-color: #f4d6a0;
+    text-decoration: none;
     cursor: help;
 }
 
-/* ---------- TABELA DE HORÁRIOS ---------- */
+/* Horarios */
 
 table {
     width: 100%;
     margin-top: 32px;
-    background-color: var(--creme-claro);
+    background-color: #fffdf8;
     border-collapse: collapse;
-    border-radius: 12px;
-    box-shadow: var(--sombra);
+    border-radius: 12px 12px 0 0;
     overflow: hidden;
 }
 
 caption {
     padding: 14px;
-    background-color: var(--marrom);
-    color: var(--texto-claro);
+    background-color: #70452f;
+    color: #ffffff;
     font-size: 1.05rem;
     font-weight: 700;
 }
 
 th,
 td {
+    border: 1px solid black;
     padding: 16px 20px;
-    border-bottom: 1px solid var(--borda);
     text-align: left;
 }
 
 thead {
-    background-color: var(--verde);
-    color: var(--texto-claro);
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f1eadc;
+    background-color: #2f684c;
+    color: #ffffff;
 }
 
 tbody tr:hover {
-    background-color: var(--verde-claro);
+    background-color: #dce9df;
 }
 
 tfoot td {
@@ -309,29 +293,28 @@ tfoot td {
 #horarios > p:last-child {
     margin-top: 20px;
     padding: 14px 18px;
-    background-color: var(--verde-claro);
-    border-left: 5px solid var(--verde);
+    background-color: #dce9df;
+    border-left: 5px solid #2f684c;
     border-radius: 6px;
 }
-
-/* ---------- PERGUNTAS FREQUENTES ---------- */
+/* Perguntas Frequentes */
 
 details {
     margin-top: 14px;
-    background-color: var(--creme-claro);
-    border: 1px solid var(--borda);
+    background-color: #fffdf8;
+    border: 1px solid #ded3c3;
     border-radius: 10px;
 }
 
 summary {
     padding: 18px 22px;
-    color: var(--verde-escuro);
+    color: #173b2c;
     font-weight: 700;
     cursor: pointer;
 }
 
 details[open] summary {
-    border-bottom: 1px solid var(--borda);
+    border-bottom: 1px solid #ded3c3;
 }
 
 details p {
@@ -339,10 +322,10 @@ details p {
     padding: 16px 22px 20px;
 }
 
-/* ---------- FORMULÁRIO ---------- */
+/* Reserva */
 
 #reserva {
-    max-width: 760px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -353,20 +336,22 @@ form {
 fieldset {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 8px 22px;
+    gap: 8px;
     padding: 30px;
-    background-color: var(--creme-claro);
-    border: 1px solid var(--borda);
+    background-color: #fffdf8;
+    border: 1px solid #ded3c3;
     border-radius: 14px;
-    box-shadow: var(--sombra);
+    box-shadow: 0 8px 24px rgba(38, 30, 20, 0.12);
 }
 
 legend {
-    padding: 0 10px;
-    color: var(--marrom);
+    background-color: #70452f;
+    border-radius: 3px;
+    padding: 5px;
+    color: rgb(255, 255, 255);
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.35rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 900;
 }
 
 label {
@@ -377,58 +362,55 @@ label {
 }
 
 input {
-    width: 100%;
+    width: auto;
     padding: 12px 14px;
     background-color: #ffffff;
     border: 1px solid #bfb3a3;
     border-radius: 7px;
-    color: var(--texto);
+    color: #29251f;
     font: inherit;
 }
 
 input:focus {
-    border-color: var(--verde);
+    border-color: #2f684c;
     outline: 3px solid rgba(47, 104, 76, 0.2);
 }
 
 button {
     margin-top: 18px;
     padding: 14px 22px;
-    background-color: var(--verde-escuro);
-    color: var(--texto-claro);
+    background-color: #173b2c;
+    color: #ffffff;
     font: inherit;
     font-weight: 700;
     border: 0;
     border-radius: 7px;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: 0.2s;
 }
 
-button:hover,
-button:focus-visible {
-    background-color: var(--marrom);
+button:hover {
+    background-color: #70452f;
     transform: translateY(-2px);
 }
-
-/* ---------- DIALOG DEMONSTRATIVO ---------- */
 
 dialog[open] {
     position: static;
     display: block;
-    width: min(680px, 90%);
-    margin: 34px auto 72px;
+    width: 90%;
+    max-width: 680px;
+    margin: 38px auto 72px;
     padding: 24px 28px;
     background-color: #fff7df;
-    color: var(--texto);
-    border: 1px solid var(--dourado);
-    border-left: 6px solid var(--dourado);
+    color: #29251f;
+    border: 1px solid #c69345;
+    border-left: 6px solid #c69345;
     border-radius: 10px;
-    box-shadow: var(--sombra);
 }
 
 dialog h2 {
     margin: 0 0 6px;
-    color: var(--marrom);
+    color: #70452f;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.35rem;
 }
@@ -437,10 +419,8 @@ dialog p {
     margin: 0;
 }
 
-/* ---------- RODAPÉ ---------- */
-
 footer {
-    padding: 52px 6%;
+    padding: 50px;
     background-color: #10291f;
     color: #e9eee9;
     text-align: center;
@@ -462,50 +442,148 @@ footer small {
     color: #b9c5bd;
 }
 
-/* ---------- RESPONSIVIDADE ---------- */
+/* TABLET */
 
 @media (max-width: 900px) {
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    section > h2,
+    footer h2 {
+        font-size: 2.2rem;
+    }
+
     #sobre {
-        grid-template-columns: 1fr;
+        padding: 40px 10px;
     }
 
     #sobre figure {
-        grid-row: auto;
+        width: 320px;
+        height: 320px;
+
+        margin: 0 32px 30px 0;
+
+        shape-outside: circle(45%);
+        shape-margin: 18px;
+    }
+
+    #sobre p {
+        font-size: 1rem;
+        line-height: 1.7;
     }
 
     #cardapio {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #cardapio aside {
         grid-column: 1 / -1;
         grid-row: auto;
     }
+
+    #reserva {
+        width: 90%;
+    }
 }
 
+
+/* CELULAR */
+
 @media (max-width: 620px) {
+
+    body {
+        font-size: 15px;
+    }
+
     header {
-        padding-top: 38px;
+        padding-top: 32px;
+    }
+
+    header h1 {
+        padding: 0 20px;
+
+        font-size: 2.3rem;
+        letter-spacing: 1px;
+    }
+
+    header p {
+        margin: 12px 20px 20px;
+        font-size: 0.95rem;
     }
 
     nav ul {
-        gap: 6px 18px;
+        gap: 8px 18px;
+
+        padding: 14px 16px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
     }
 
     main {
-        width: min(92%, 1180px);
+        width: 92%;
     }
 
     section {
-        padding: 52px 0;
+        padding: 48px 0;
+    }
+
+    section > h2,
+    footer h2 {
+        margin-left: 0;
+
+        font-size: 1.8rem;
+    }
+
+    #sobre {
+        padding: 40px 0;
+    }
+
+    #sobre h2 {
+        margin-bottom: 30px;
+        font-size: 1.9rem;
+        text-align: center;
+    }
+
+    #sobre h2::after {
+        width: 80px;
+        height: 3px;
+        margin: 12px auto 0;
+    }
+
+    #sobre figure {
+        float: none;
+        width: min(300px, 90%);
+        height: auto;
+        margin: 0 auto 28px;
+        shape-outside: none;
     }
 
     #sobre figure img {
-        min-height: 260px;
+        width: 100%;
+        height: auto;
+    }
+
+    #sobre figcaption {
+        margin-top: 10px;
+        font-size: 0.82rem;
+        line-height: 1.4;
+    }
+
+    #sobre p {
+        margin: 16px 0;
+        font-size: 1rem;
+        line-height: 1.75;
+        text-align: left;
     }
 
     #cardapio {
         grid-template-columns: 1fr;
+
+        gap: 18px;
     }
 
     #cardapio > h2,
@@ -514,13 +592,73 @@ footer small {
         grid-column: 1;
     }
 
+    #cardapio article {
+        padding: 22px;
+    }
+
+    #cardapio article:hover {
+        transform: none;
+    }
+
+    #cardapio article h3,
+    #cardapio aside h3 {
+        font-size: 1.3rem;
+    }
+
+    #cardapio aside {
+        padding: 24px;
+    }
+
     table {
         display: block;
+        width: 100%;
         overflow-x: auto;
         white-space: nowrap;
     }
 
+    th,
+    td {
+        padding: 13px 16px;
+    }
+
+    caption {
+        font-size: 0.95rem;
+    }
+
+
+    summary {
+        padding: 16px 18px;
+    }
+
+    details p {
+        padding: 15px 18px 18px;
+    }
+
+    #reserva {
+        width: 100%;
+    }
+
     fieldset {
         padding: 22px 18px;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    dialog[open] {
+        width: auto;
+        margin: 28px 16px 50px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    footer {
+        padding: 38px 20px;
     }
 }

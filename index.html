@@ -60,7 +60,7 @@
                   Assim, quem não enxerga ou não carrega a imagem ainda recebe a informação essencial.
                 -->
           <img
-            src="assets/prato-da-casa.jpg"
+            src="assets/img/RisotoCogumelos.png"
             alt="Risoto cremoso com cogumelos, ervas frescas e queijo ralado servido em prato claro"
           />
           <!--
@@ -72,13 +72,20 @@
         </figure>
         <p>
           No Sabor da Casa, cada receita combina ingredientes locais e preparo
-          artesanal. Nosso compromisso é servir comida
+          artesanal, valorizando sabores autênticos e o cuidado em cada detalhe.
+          Nosso compromisso é servir comida
           <strong>fresca e acolhedora</strong>, respeitando o tempo de cada
-          ingrediente.
+          ingrediente e buscando criar pratos que tragam conforto e sabor à
+          mesa. Trabalhamos com produtos selecionados e receitas preparadas com
+          atenção, para que cada refeição se transforme em uma experiência
+          especial.
         </p>
-
         <p>
-          O menu foi criado pela chef Marina Lopes e muda conforme a estação.
+          O menu foi criado pela chef Marina Lopes e muda conforme a estação,
+          acompanhando a disponibilidade dos ingredientes e valorizando produtos
+          frescos em cada época do ano. Cada prato é pensado para oferecer novas
+          combinações de sabores, aromas e texturas, tornando cada visita uma
+          experiência diferente e especial.
           <em>Da nossa cozinha para a sua mesa.</em>
         </p>
       </section>
@@ -180,37 +187,50 @@
     -->
           <p>
             Porções individuais pesam aproximadamente 0,4
-            <abbr title="quilograma">kg</abbr>.
+            <abbr title="Quilograma">kg</abbr>.
           </p>
         </aside>
       </section>
 
-      <!--
-          Esta section reúne os horários de funcionamento, um assunto independente dentro do main.
-          Sua identificação por título facilita encontrar rapidamente quando o restaurante abre.
-        -->
       <section id="horarios" aria-labelledby="titulo-horarios">
         <h2 id="titulo-horarios">Horários de funcionamento</h2>
-
         <!--
-              A table apresenta dados que dependem da relação entre linhas e colunas.
-              Usá-la para dias e turnos permite que leitores de tela anunciem os cabeçalhos associados.
+              Aqui utilizamos a table porque queremos fazer uma tebela com as informações em que
+              a coluna e as linhas são relacionadas.
+              No caso vamos dividir em (DIA - ALMOÇO - JANTAR) e cada uma dessas colunas teremos
+              Varios dias, horários de almoço e horários de janta.
             -->
+        <!--
+  A table é usada para organizar dados que possuem relação entre linhas e colunas.
+  Aqui ela é usada porque queremos mostrar os dias da semana e os horários de
+  almoço e jantar de uma forma organizada e fácil de comparar.
+-->
         <table>
           <!--
-                  O caption fornece o título acessível da tabela. Ele explica seu conteúdo antes
-                  da leitura das células e ajuda o usuário a decidir se deseja explorá-la.
-                -->
+    O caption é usado para dar um título para a tabela e explicar sobre
+    o que são os dados que aparecem nela.
+  -->
           <caption>
             Atendimento semanal do restaurante
           </caption>
 
           <!--
-                  O thead agrupa os cabeçalhos das colunas. Isso diferencia os rótulos dos dados
-                  e melhora a interpretação da tabela por navegadores e leitores de tela.
-                -->
+    O thead representa o cabeçalho da tabela.
+    Aqui colocamos os nomes das colunas que ajudam a entender
+    o que cada informação da tabela representa.
+  -->
           <thead>
+            <!--
+      O tr representa uma linha da tabela.
+      Nesse caso, essa linha contém os cabeçalhos das três colunas.
+    -->
             <tr>
+              <!--
+        O th representa uma célula de cabeçalho.
+        Usamos ele para identificar o que cada coluna representa.
+        O scope="col" informa que esses cabeçalhos estão relacionados
+        com todos os dados que aparecem abaixo deles na coluna.
+      -->
               <th scope="col">Dia</th>
               <th scope="col">Almoço</th>
               <th scope="col">Jantar</th>
@@ -218,21 +238,43 @@
           </thead>
 
           <!--
-                  O tbody agrupa as linhas principais de dados. Essa separação deixa a estrutura
-                  da tabela mais clara e facilita aplicar estilos ou fazer manutenção.
-                -->
+    O tbody representa o corpo da tabela.
+    É nele que colocamos os principais dados que queremos mostrar,
+    que nesse caso são os dias e os horários de funcionamento.
+  -->
           <tbody>
+            <!--
+      Cada tr cria uma nova linha no corpo da tabela.
+      Aqui cada linha representa um dia ou grupo de dias da semana.
+    -->
             <tr>
+              <!--
+        Aqui usamos th novamente, mas agora com scope="row".
+        Isso acontece porque "Segunda a quinta" funciona como o
+        cabeçalho dessa linha, identificando a quais dias esses horários pertencem.
+      -->
               <th scope="row">Segunda a quinta</th>
+
+              <!--
+        O td representa uma célula comum com os dados da tabela.
+        Diferente do th, ele não é um cabeçalho.
+        Aqui ele guarda o horário de almoço.	
+      -->
               <td>
                 <time datetime="11:00">11h</time> às
                 <time datetime="15:00">15h</time>
               </td>
+
+              <!--
+        Outro td é usado para guardar o horário de jantar
+        relacionado aos mesmos dias dessa linha.
+      -->
               <td>
                 <time datetime="18:00">18h</time> às
                 <time datetime="22:00">22h</time>
               </td>
             </tr>
+
             <tr>
               <th scope="row">Sexta-feira</th>
               <td>
@@ -244,6 +286,7 @@
                 <time datetime="23:00">23h</time>
               </td>
             </tr>
+
             <tr>
               <th scope="row">Sábado</th>
               <td>
@@ -255,6 +298,7 @@
                 <time datetime="23:00">23h</time>
               </td>
             </tr>
+
             <tr>
               <th scope="row">Domingo</th>
               <td>
@@ -266,11 +310,21 @@
           </tbody>
 
           <!--
-                  O tfoot agrupa a informação final ou o resumo da tabela. Aqui ele destaca uma
-                  observação válida para todos os horários, separando-a dos registros do corpo.
-                -->
+    O tfoot representa o rodapé da tabela.
+    Ele é usado para colocar uma informação final, resumo ou observação
+    relacionada aos dados apresentados na tabela.
+  -->
           <tfoot>
+            <!--
+      O tr cria uma linha no rodapé da tabela.
+      Nesse caso temos apenas uma linha com uma observação geral.
+    -->
             <tr>
+              <!--
+        O td representa uma célula comum da tabela.
+        O colspan="3" faz essa célula ocupar o espaço das três colunas,
+        já que essa informação é válida para a tabela inteira.
+      -->
               <td colspan="3">
                 A cozinha encerra os pedidos 30 minutos antes do fechamento.
               </td>
@@ -279,8 +333,9 @@
         </table>
 
         <!--
-              O time representa horário ou data em formato interpretável por máquinas.
-              O datetime permite que sistemas reconheçam a data do próximo evento mesmo com texto amigável.
+               O time mostra uma data ou horário para o usuário.
+               Já o datetime ajuda os sistemas a entenderem exatamente
+               qual data ou horário está sendo informado.
             -->
         <p>
           Próximo jantar especial:
@@ -290,13 +345,8 @@
         </p>
       </section>
 
-      <!--
-          Esta section reúne dúvidas frequentes relacionadas à visita ao restaurante.
-          Separá-las melhora a organização e torna o conteúdo mais fácil de localizar.
-        -->
       <section id="perguntas" aria-labelledby="titulo-perguntas">
         <h2 id="titulo-perguntas">Perguntas frequentes</h2>
-
         <!--
               O details cria um bloco que pode ser expandido ou recolhido pelo usuário.
               Isso reduz o excesso visual sem esconder a informação de tecnologias assistivas.
@@ -304,7 +354,7 @@
         <details>
           <!--
                   O summary fornece o rótulo clicável e sempre visível do details.
-                  Uma pergunta objetiva informa claramente qual resposta será revelada.
+                  Aqui utilizamos uma pergunta objetiva que informa claramente qual resposta será revelada.
                 -->
           <summary>O restaurante possui opções vegetarianas?</summary>
           <p>
@@ -329,10 +379,6 @@
         </details>
       </section>
 
-      <!--
-          Esta section agrupa o formulário de reserva, uma tarefa específica da página.
-          O título associado ajuda leitores de tela a identificar o propósito da região.
-        -->
       <section id="reserva" aria-labelledby="titulo-reserva">
         <h2 id="titulo-reserva">Reserve sua mesa</h2>
         <p id="orientacao-reserva">
@@ -340,9 +386,13 @@
         </p>
 
         <!--
-              O form reúne controles usados para enviar dados. O aria-describedby relaciona
-              o formulário às instruções, garantindo que a orientação possa ser anunciada.
-            -->
+  O form é usado para criar um formulário onde o usuário pode
+  preencher e enviar informações. Aqui ele é usado para pegar
+  os dados necessários para fazer uma reserva no restaurante.
+
+  O method="post" indica que os dados preenchidos serão enviados
+  pelo formulário.
+-->
         <form
           id="form-reserva"
           action="#"
@@ -350,17 +400,30 @@
           aria-describedby="orientacao-reserva"
         >
           <!--
-                  O fieldset agrupa campos que pertencem ao mesmo assunto. Essa relação semântica
-                  ajuda usuários de leitores de tela a compreenderem o contexto de cada controle.
-                -->
+    O fieldset é usado para agrupar campos que fazem parte
+    do mesmo assunto. Aqui todos os campos fazem parte dos
+    dados necessários para realizar uma reserva.
+  -->
           <fieldset>
             <!--
-                      O legend nomeia o grupo criado pelo fieldset. Ele é anunciado antes dos campos,
-                      fornecendo contexto acessível para o conjunto de dados da reserva.
-                    -->
+      O legend é usado para dar um título ao grupo de campos
+      criado pelo fieldset. Aqui ele informa que os campos
+      abaixo são os dados da reserva.
+    -->
             <legend>Dados da reserva</legend>
 
+            <!--
+      O label mostra qual informação deve ser preenchida no input.
+      O for="nome" liga esse label ao input que possui id="nome",
+      ajudando na organização e também na acessibilidade.
+    -->
             <label for="nome">Nome completo *</label>
+
+            <!--
+      O input é usado para receber uma informação do usuário.
+      O type="text" permite a entrada de texto e o required
+      indica que esse campo precisa ser preenchido.
+    -->
             <input
               type="text"
               id="nome"
@@ -369,7 +432,17 @@
               required
             />
 
+            <!--
+      Aqui o label informa que o próximo campo é para o e-mail.
+      O for="email" liga esse texto ao input com id="email".
+    -->
             <label for="email">E-mail *</label>
+
+            <!--
+      O type="email" indica que esse campo deve receber um endereço
+      de e-mail, permitindo que o navegador verifique se o formato
+      informado é válido.
+    -->
             <input
               type="email"
               id="email"
@@ -378,10 +451,28 @@
               required
             />
 
+            <!--
+      O label identifica o campo onde o usuário deve escolher
+      a data da reserva.
+    -->
             <label for="data">Data *</label>
+
+            <!--
+      O type="date" cria um campo próprio para selecionar uma data.
+    -->
             <input type="date" id="data" name="data" required />
 
+            <!--
+      O label identifica o campo usado para escolher
+      o horário da reserva.
+    -->
             <label for="horario">Horário *</label>
+
+            <!--
+      O type="time" permite escolher um horário.
+      O min e o max limitam os horários que podem ser escolhidos,
+      e o required torna o preenchimento obrigatório.
+    -->
             <input
               type="time"
               id="horario"
@@ -391,16 +482,24 @@
               required
             />
 
+            <!--
+      O label informa que esse campo representa a quantidade
+      de pessoas que participarão da reserva.
+    -->
             <label for="pessoas">Número de pessoas *</label>
-            <input
-              type="number"
-              id="pessoas"
-              name="pessoas"
-              min="1"
-              max="12"
-              required
-            />
 
+            <!--
+      O type="number" permite apenas valores numéricos.
+      O min="1" e max="12" definem a quantidade mínima
+      e máxima de pessoas permitidas na reserva.
+    -->
+            <input type="number" id="pessoas" min="1" max="12" required />
+
+            <!--
+      O button cria o botão do formulário.
+      O type="submit" indica que, ao clicar nele,
+      os dados preenchidos no formulário serão enviados.
+    -->
             <button type="submit">Solicitar reserva</button>
           </fieldset>
         </form>
@@ -409,8 +508,9 @@
       <!--
           O dialog representa uma janela que exige atenção temporária. Ele confirma a reserva
           sem levar o usuário a outra página e possui um título associado por aria-labelledby.
+					AQUI DEIXAMOS ELE ABERTO PARA CONSEGUIR VISUALIZAR, MAS ELE APARECERIA APENAS APÓS SELICIONAR UM BOTAO
         -->
-      <dialog id="confirmacao-reserva" aria-labelledby="titulo-dialogo">
+      <dialog id="confirmacao-reserva" aria-labelledby="titulo-dialogo" open>
         <h2 id="titulo-dialogo">Solicitação recebida!</h2>
         <p>
           Entraremos em contato para confirmar a disponibilidade da sua mesa.
@@ -426,12 +526,11 @@
     </main>
 
     <!--
-      O footer contém informações finais e institucionais da página.
-      Essa identificação ajuda usuários e mecanismos de busca a reconhecerem contato e autoria.
+      O footer contém as informações finais da página.
+      Aqui colocamos informações como contato e autoria.
     -->
     <footer id="contato">
       <h2>Contato</h2>
-
       <!--
           O address identifica informações de contato do responsável pelo site ou estabelecimento.
           Isso oferece significado semântico ao endereço, telefone e e-mail do restaurante.
@@ -444,7 +543,9 @@
           >contato@sabordacasa.com.br</a
         >
       </address>
-
+      <!--
+          O small aqui serve pra mostrar uma importancia secundaria, nesse caso apenas que os direitos são reservados.
+        -->
       <p>
         <small>&copy; 2026 Sabor da Casa. Todos os direitos reservados.</small>
       </p>
